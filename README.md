@@ -1,2 +1,2 @@
 # addwidthclass
-Plugin for adding CSS classes depending from element width
+jQuery Plugin for adding CSS classes depending from element width
