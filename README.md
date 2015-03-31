@@ -5,4 +5,4 @@ Pass your breakpoints to plugin in pixels and it will automatically add followin
 
 width-lt-xxx    width-gt-xxx
 
-see [wiki](https://github.com/yura-x/addwidthclass/wiki) for examples
+### see [wiki](https://github.com/yura-x/addwidthclass/wiki) for examples
