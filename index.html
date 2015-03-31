@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>addWidthClass Plugin Demo</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+        <style>
+
+            h3 {
+                background: #eee;
+                color: #111;
+                padding: 0 0.2em;
+            }
+
+            /* following classes will be created automatically by plugin */
+
+            h3.width-gt-400{
+                background: #ccc;
+                color: #333;
+            }
+
+            h3.width-gt-500{
+                background: #111;
+                color: #eee;
+            }
+
+            h3.width-gt-600{
+                background: #aaa;
+                color: #fff;
+            }
+
+
+            /* demo styles */
+            body {
+                color: 333;
+                line-height: 1.4;
+                font-family: sans-serif;
+            }
+            pre {
+                font: 14px Consolas,"Liberation Mono",Menlo,Courier,monospace;
+                padding: 16px;
+                overflow: auto;
+                line-height: 1.45;
+                background-color: #F7F7F7;
+                border-radius: 3px;
+            }
+
+        </style>
+
+    </head>
+    <body>
+
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <h1>Plugin Demo</h1>
+
+        <div style="width: 350px">
+            <h3>h3 tag 350px width</h3>
+        </div>
+
+        <div style="width: 450px">
+            <h3>h3 tag 450px width</h3>
+        </div>
+
+        <div style="width: 550px">
+            <h3>h3 tag 550px width</h3>
+        </div>
+
+        <div style="width: 650px">
+            <h3>h3 tag 650px width</h3>
+        </div>
+
+        <hr>
+
+
+        <h1>Plugin Documentation</h1>
+
+        <p>This plugin adds CSS classes depending from element width
+        Pass your breakpoints to plugin in pixels and it will automatically add following CSS classes to your elements:</p>
+
+<pre><code>width-lt-xxx
+width-gt-xxx
+</code></pre>
+
+        <p>where 'xxx' is your breakpoint value</p>
+
+        <hr>
+
+        <h2>
+        <a id="user-content-plugin-setup" class="anchor" href="#plugin-setup" aria-hidden="true"><span class="octicon octicon-link"></span></a>Plugin Setup</h2>
+
+        <h3>
+        <a id="user-content-1-create-your-markup" class="anchor" href="#1-create-your-markup" aria-hidden="true"><span class="octicon octicon-link"></span></a>1. Create your markup</h3>
+
+<pre><code>&lt;div style="width: 350px"&gt;
+    &lt;h3&gt;h3 tag 350px width&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div style="width: 450px"&gt;
+    &lt;h3&gt;h3 tag 450px width&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div style="width: 550px"&gt;
+    &lt;h3&gt;h3 tag 550px width&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div style="width: 650px"&gt;
+    &lt;h3&gt;h3 tag 650px width&lt;/h3&gt;
+&lt;/div&gt;
+</code></pre>
+
+        <h3>2. Add jQuery and Plugin</h3>
+
+<pre><code>&lt;script src="jquery-1.11.2.min.js"&gt;&lt;/script&gt;
+&lt;script src="jquery.addwidthclass.js"&gt;&lt;/script&gt;
+</code></pre>
+
+        <h3>3. Initialize your plugin</h3>
+
+<pre><code>jQuery(document).ready(function(){
+    jQuery('h3').addWidthClass({
+        breakpoints: [400, 500, 600]
+    });
+});
+</code></pre>
+
+        <p>If you done right, the result will be:</p>
+
+<pre><code>&lt;div style="width: 350px"&gt;
+    &lt;h3 class="width-lt-600 width-lt-500 width-lt-400"&gt;h3 tag 350px width&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div style="width: 450px"&gt;
+    &lt;h3 class="width-lt-600 width-lt-500 width-gt-400"&gt;h3 tag 450px width&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div style="width: 550px"&gt;
+    &lt;h3 class="width-lt-600 width-gt-500 width-gt-400"&gt;h3 tag 550px width&lt;/h3&gt;
+&lt;/div&gt;
+&lt;div style="width: 650px"&gt;
+    &lt;h3 class="width-gt-600 width-gt-500 width-gt-400"&gt;h3 tag 650px width&lt;/h3&gt;
+&lt;/div&gt;
+</code></pre>
+
+        <h3>4. Add your CSS styles</h3>
+
+<pre><code>h3 {
+    background: #eee;
+    color: #111;
+}
+
+h3.width-gt-400{
+    background: #ccc;
+    color: #333;
+}
+
+h3.width-gt-500{
+    background: #111;
+    color: #eee;
+}
+
+h3.width-gt-600{
+    background: #aaa;
+    color: #fff;
+}
+</code></pre>
+
+            
+        
+        <script src="jquery-1.11.2.min.js"></script>
+        <script src="jquery.addwidthclass.js"></script>
+
+        <script>
+            jQuery(document).ready(function(){
+                jQuery('h3').addWidthClass({
+                    breakpoints: [400, 500, 600]
+                });
+            });
+        </script>
+        
+       
+    </body>
+</html>
